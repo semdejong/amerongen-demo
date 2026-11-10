@@ -1,101 +1,81 @@
 /**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
+ * Amerongen Schilderwerken — alleen geverifieerde feiten (amerongenborculo.nl, 10 nov 2026).
  */
+const phoneDisplay = "0545-273824";
+const phoneHref = "tel:+31545273824";
+const email = "info@amerongenborculo.nl";
+
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "amerongen-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "Amerongen Schilderwerken",
+    shortName: "Amerongen",
+    legalStyle: "Amerongen Schilderwerken BV",
+    tagline: "Specialisten in planmatig- en vastgoedonderhoud",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Middelgroot, full-service schildersbedrijf in Borculo, gespecialiseerd in renovatie en totaalonderhoud van vastgoed — voor woningcorporaties, VvE’s, zorg en particulieren. Meerjarige onderhouds-planningen (MJOP) vanuit Parallelweg 15.",
+    logo: "/img/logo/logo.png",
+    logoWidth: 615,
+    logoHeight: 235,
+    city: "Borculo",
+    region: "Borculo, Lochem, Ruurlo, Vorden en de Achterhoek",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
+    primary: "#092356",
     primaryForeground: "#ffffff",
-    accent: "#f59e0b",
-    background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    accent: "#E83643",
+    background: "#F2F4F8",
+    foreground: "#092356",
+    muted: "#FFFFFF",
+    marine: "#092356",
+    planrood: "#E83643",
+    planroodText: "#B81D2C",
+    planpapier: "#F2F4F8",
+    loodgrijs: "#5C6475",
+    haarlijn: "#C2C4D5",
+    wit: "#FFFFFF",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "Amerongen Schilderwerken | Planmatig- en vastgoedonderhoud in Borculo",
+    description:
+      "Schilderwerk en meerjarig vastgoedonderhoud vanuit Borculo. MJOP voor corporaties en particulieren. Bel 0545-273824.",
     lang: "nl",
   },
 
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Diensten", href: "/diensten" },
+    { label: "Onderhoudsplan", href: "/onderhoudsplan" },
+    { label: "Zakelijk", href: "/zakelijk" },
+    { label: "Projecten", href: "/projecten" },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Contact", href: "/contact" },
   ],
 
-  hero: {
-    title: "Vakwerk waar u op kunt bouwen",
-    subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
-  },
-
-  services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
-    items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-    ],
-  },
-
-  about: {
-    title: "Over ons",
-    text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
-    ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
-  },
-
-  reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
-  },
-
   contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
+    owner: "Walter Amerongen",
+    phoneDisplay,
+    phoneHref,
+    email,
+    emailHref: `mailto:${email}`,
+    street: "Parallelweg 15",
+    postalCode: "7271 VB",
+    city: "Borculo",
+    hours: "Maandag t/m vrijdag 08:00 – 18:00 uur",
+    kvk: "08038052",
+    mapsHref:
+      "https://www.google.com/maps/search/?api=1&query=Parallelweg+15,+7271+VB+Borculo",
+    mapsLabel: "Parallelweg 15 op de kaart",
+    facebook: "https://www.facebook.com/Amerongen-Schilderwerken",
   },
 
   footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
+    kvk: "KvK 08038052",
+    socials: [
+      { label: "Facebook", href: "https://www.facebook.com/Amerongen-Schilderwerken" },
+    ],
   },
 };
 
