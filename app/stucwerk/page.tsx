@@ -29,8 +29,8 @@ export default function StucwerkPage() {
         lede="Het belangrijkste doel van stucwerk is het aanbrengen van een afwerklaag en het sausklaar maken van een muur of plafond."
       />
       <div className="mx-auto max-w-6xl px-5 py-12" data-section="stucwerk">
-        <div className="grid gap-6 md:grid-cols-2">
-          <article className="border-t-2 border-marine bg-white px-5 py-6">
+        <div className="grid items-stretch gap-6 md:grid-cols-2">
+          <article className="h-full border-t-2 border-marine bg-white px-5 py-6">
             <h2 className="text-2xl">Binnen: sausklaar</h2>
             <p className="mt-3">
               Het belangrijkste doel is een afwerklaag op muur of plafond, zodat het vlak sausklaar is. Met
@@ -38,7 +38,7 @@ export default function StucwerkPage() {
               andere afwerking.
             </p>
           </article>
-          <article className="border-t-2 border-marine bg-white px-5 py-6 md:mt-8">
+          <article className="h-full border-t-2 border-marine bg-white px-5 py-6">
             <h2 className="text-2xl">Buiten: huis en tuin</h2>
             <p className="mt-3">
               Bij een nieuwe uitstraling in de tuin komt stucwerk vaak niet als eerste bij mensen op. Toch kan

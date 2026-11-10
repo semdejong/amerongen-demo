@@ -62,9 +62,10 @@ export default function ProjectGallery({ groups }: { groups: GalleryGroup[] }) {
                   <button
                     type="button"
                     onClick={() => setIndex(itemIndex)}
-                    className="block w-full bg-white text-left"
+                    className="block max-w-full bg-white text-left"
+                    style={{ width: item.width }}
                   >
-                    <span className="relative block w-full" style={{ aspectRatio: `${item.width} / ${item.height}`, maxWidth: item.width }}>
+                    <span className="relative block w-full" style={{ aspectRatio: `${item.width} / ${item.height}` }}>
                       <Image
                         src={item.src}
                         alt={item.alt}
@@ -96,8 +97,8 @@ export default function ProjectGallery({ groups }: { groups: GalleryGroup[] }) {
       >
         {photo ? (
           <div className="flex max-h-[calc(100vh-1.5rem)] flex-col">
-            <div className="flex items-center justify-between gap-3 border-b border-haarlijn px-3 py-2">
-              <p className="font-mono text-[12px] tracking-wide uppercase">{photo.caption}</p>
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-haarlijn px-3 py-2">
+              <p className="min-w-0 flex-1 font-mono text-[12px] leading-snug tracking-wide uppercase">{photo.caption}</p>
               <button ref={closeRef} type="button" className="btn btn-marine min-w-11" onClick={() => setIndex(null)}>
                 Sluiten
               </button>

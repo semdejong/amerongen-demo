@@ -39,8 +39,8 @@ export default function HoutrotPage() {
             </p>
             <ul className="divide-y divide-haarlijn border-y border-haarlijn">
               {content.houtrotSignalen.map((item) => (
-                <li key={item} className="grid grid-cols-[1.5rem_1fr] items-baseline gap-3 py-3">
-                  <span aria-hidden className="mt-2 h-2 w-4 bg-marine" />
+                <li key={item} className="flex items-start gap-3 py-3">
+                  <span aria-hidden className="mt-2.5 h-2 w-4 shrink-0 bg-marine" />
                   <span>{item}</span>
                 </li>
               ))}

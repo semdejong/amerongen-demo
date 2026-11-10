@@ -7,7 +7,7 @@ const note: Record<string, string> = {
   J3: "Inspectie",
   J4: "Bijwerken",
   J5: "Herschilderen",
-  J6: "Herschilderen",
+  J6: "Jaar zes",
 };
 
 function Mark({ mark }: { mark: YearMark }) {
@@ -55,7 +55,7 @@ export default function Jaarschijf({ variant = "band" }: { variant?: "edge" | "b
                 {year.id}
               </span>
               {edge ? null : (
-                <span className="mt-1 hidden px-1 font-mono text-[11px] leading-tight text-loodgrijs sm:block">
+                <span className="mt-1 hidden px-0.5 font-mono text-[11px] leading-tight text-loodgrijs lg:block">
                   {note[year.id]}
                 </span>
               )}
@@ -63,7 +63,7 @@ export default function Jaarschijf({ variant = "band" }: { variant?: "edge" | "b
           ))}
         </ol>
         {edge ? null : (
-          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 px-1 font-mono text-[12px] text-loodgrijs sm:hidden">
+          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 px-1 font-mono text-[12px] text-loodgrijs lg:hidden">
             {content.years.map((year) => (
               <li key={year.id}>
                 {year.id} {note[year.id]}

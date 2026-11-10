@@ -68,7 +68,7 @@ export default function Home() {
             <p className="mt-5 text-loodgrijs">
               Als middelgroot, full-service schildersbedrijf zijn wij gespecialiseerd in renovatie en
               totaalonderhoud van vastgoed. Voor particulieren, vastgoedbeheerders, zorginstellingen,
-              woningbouwverenigingen, scholen en fabrieken.
+              woningbouwverenigingen en overheidsgebouwen.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <BelButton />
@@ -127,9 +127,11 @@ export default function Home() {
               woningbouwverenigingen. Wij stellen een meerjarenplan op en voeren mutatiewerk,
               glasschadeherstel, brand- en waterschadeherstel, calamiteitenonderhoud en service-onderhoud uit.
             </p>
-            <ul className="mt-4 space-y-1 text-sm text-white/85">
+            <ul className="mt-4 border-t border-white/25">
               {content.zakelijkTaken.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="border-b border-white/25 py-1.5">
+                  {item}
+                </li>
               ))}
             </ul>
             <p className="mt-4" id="prowonen-home">
@@ -149,20 +151,18 @@ export default function Home() {
               <BelButton tone="lijn-licht" />
             </div>
           </article>
-          <article className="border-t border-haarlijn bg-planpapier px-5 py-12 md:mt-10 md:border-t-0 md:py-16 md:pl-10">
+          <article className="flex flex-col border-t border-haarlijn bg-planpapier px-5 py-12 md:self-start md:border-t-0 md:border-l md:py-16 md:pl-10">
             <h2 className="plan-rule text-3xl">Particulieren</h2>
+            <div className="mt-5">
+              <PhotoFrame photo={photos.kozijnDetail} sizes="(max-width: 768px) 100vw, 520px" />
+            </div>
             <p className="mt-4">
               Renovatie en totaalonderhoud van woningen, bijgebouwen en garages. Schilderwerk binnen en
               buiten, houtrotrenovatie, stucwerk, glaszetten, gevelreiniging en de winterschilder.
             </p>
-            <ul className="mt-4 space-y-1 text-sm text-loodgrijs">
-              <li>Schilderwerk binnen en buiten, ook de winterschilder</li>
-              <li>Houtrotrenovatie, stucwerk, glaszetten en gevelreiniging</li>
-              <li>GlansGarant in Borculo, Lochem, Ruurlo en Vorden</li>
-            </ul>
-            <p className="mt-4 text-loodgrijs">
-              In die plaatsen werken wij als exclusief partner van GlansGarant Berkelland-Lochem B.V. aan
-              meerjarenonderhoud tegen een vast bedrag per maand.
+            <p className="mt-4">
+              In Borculo, Lochem, Ruurlo en Vorden werken wij als exclusief partner van GlansGarant
+              Berkelland-Lochem B.V. aan meerjarenonderhoud tegen een vast bedrag per maand.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/particulier" className="btn btn-marine">
@@ -195,10 +195,10 @@ export default function Home() {
       </section>
 
       <section data-section="diensten" className="mx-auto max-w-6xl px-5 py-14">
-        <h2 className="plan-rule text-3xl md:text-4xl">Werkzaamheden op de strook</h2>
+        <h2 className="plan-rule text-3xl md:text-4xl">Werkzaamheden</h2>
         <p className="mt-4 max-w-3xl text-loodgrijs">
-          Onze werkzaamheden, gezet als regels op het onderhoudsplan. Geen losse kaartjes: elke regel is een
-          route.
+          Elke regel is een route: schilderwerk, houtrot, stucwerk, glas, gevel, de winterschilder en het
+          meerjarenplan.
         </p>
         <ol className="mt-8 divide-y divide-haarlijn border-y border-haarlijn">
           {diensten.map((item, index) => (
@@ -284,9 +284,9 @@ export default function Home() {
           Prowonen verhuurt in de Achterhoek. Met Reukers schilders en Gebr. van der Geest voeren wij het
           schilderwerk van hun vastgoed de komende jaren uit op basis van Resultaatgericht Samenwerken.
         </p>
-        <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-base text-loodgrijs">
+        <ul className="mt-6 grid gap-px border border-haarlijn bg-haarlijn sm:grid-cols-2 lg:grid-cols-3">
           {content.clients.map((name) => (
-            <li key={name} className={name === "Prowonen" ? "font-semibold text-marine" : ""}>
+            <li key={name} className={`bg-planpapier px-3 py-2 ${name === "Prowonen" ? "font-semibold text-marine" : "text-loodgrijs"}`}>
               {name}
             </li>
           ))}

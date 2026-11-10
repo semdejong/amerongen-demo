@@ -16,6 +16,7 @@ export default function OffertePage() {
       <PageIntro
         title="Vrijblijvende offerte"
         lede="Vertel kort wat er moet gebeuren. Wij nemen de tijd voor een advies op maat en een zo helder mogelijk uitgewerkte offerte."
+        showOfferte={false}
       />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-12 lg:grid-cols-[1fr_280px]" data-section="offerte-formulier">
         <OfferteForm />

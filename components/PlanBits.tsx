@@ -3,12 +3,12 @@ import { content } from "@/content";
 import { BelButton, MailLink, OfferteButton, PhoneLink } from "@/components/Actions";
 
 const cycle = [
-  { id: "J1", title: "In de verf", text: "Vanaf jaar 1 staat de woning in de verf. Dat is de eerste volledige schilderbeurt van het schema." },
-  { id: "J2", title: "Controle", text: "Elk jaar volgt controle en onderhoud, zodat de conditie niet uit het zicht raakt." },
-  { id: "J3", title: "Inspectie", text: "Preventieve inspectie houdt bij hoe het schilderwerk ervoor staat." },
-  { id: "J4", title: "Bijwerken", text: "Een bijwerkbeurt voorkomt dat een kleine schade uitgroeit tot een grote, dure beurt." },
-  { id: "J5", title: "Herschilderen", text: "Na vijf of zes jaar volgt een complete herschilderbeurt." },
-  { id: "J6", title: "Herschilderen", text: "Hetzelfde moment in de cyclus: jaar vijf of jaar zes, afhankelijk van het schema." },
+  { id: "J1", title: "In de verf", text: "Vanaf jaar 1 staat de woning in de verf." },
+  { id: "J2", title: "Controle", text: "Elk jaar volgt controle en onderhoud." },
+  { id: "J3", title: "Inspectie", text: "Preventieve inspectie wisselt de volledige schilderbeurten af." },
+  { id: "J4", title: "Bijwerken", text: "Bijwerkbeurten horen in hetzelfde schema, tussen de grote beurten in." },
+  { id: "J5", title: "Herschilderen", text: "Na vijf jaar kan de complete herschilderbeurt vallen." },
+  { id: "J6", title: "Of jaar zes", text: "Het schema noemt vijf of zes jaar. Jaar zes is het andere moment voor die beurt." },
 ];
 
 export function CycleSheet() {
@@ -34,9 +34,10 @@ export function WeekStrip() {
         {days.map((day) => (
           <li key={day} className="border-r border-haarlijn px-1 py-3 text-center last:border-r-0">
             <span className="block font-mono text-xs text-marine">{day}</span>
-            <span className="mt-1 block font-mono text-[10px] leading-tight text-loodgrijs sm:text-[11px]">
+            <span className="mt-1 block whitespace-nowrap font-mono text-[10px] leading-tight text-loodgrijs sm:text-[11px]">
               08:00
-              <br />
+            </span>
+            <span className="block whitespace-nowrap font-mono text-[10px] leading-tight text-loodgrijs sm:text-[11px]">
               18:00
             </span>
           </li>

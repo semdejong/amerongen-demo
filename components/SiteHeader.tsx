@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { content } from "@/content";
 import Jaarschijf from "@/components/Jaarschijf";
+import SleadsBadge from "@/components/SleadsBadge";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -108,11 +109,21 @@ export default function SiteHeader() {
         </button>
       </div>
 
-      <p className="border-t border-haarlijn px-4 py-1.5 text-center font-mono text-[12px] text-loodgrijs sm:px-5 sm:text-left">
-        <span className="mx-auto block max-w-6xl">
-          {content.contact.hours} · {content.contact.street}, {content.contact.city}
-        </span>
-      </p>
+      <div className="border-t border-haarlijn px-4 py-1.5 sm:px-5">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-1.5 sm:flex-row sm:justify-between">
+          <p className="text-center font-mono text-[12px] leading-snug text-loodgrijs sm:text-left">
+            <span className="sm:inline">{content.contact.hours}</span>
+            <span className="hidden sm:inline" aria-hidden>
+              {" "}
+              ·{" "}
+            </span>
+            <span className="mt-0.5 block sm:mt-0 sm:inline">
+              {content.contact.street}, {content.contact.city}
+            </span>
+          </p>
+          <SleadsBadge />
+        </div>
+      </div>
 
       <div id={menuId} hidden={!open} className="border-t border-haarlijn bg-white lg:hidden">
         <nav aria-label="Mobiel menu" className="mx-auto flex max-w-6xl flex-col px-2 py-2">
