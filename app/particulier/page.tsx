@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageIntro from "@/components/PageIntro";
 import PlanList from "@/components/PlanList";
 import PhotoFrame from "@/components/PhotoFrame";
+import { Further, SlotBand } from "@/components/PlanBits";
 import { content, photos } from "@/content";
 
 export const metadata: Metadata = {
@@ -59,6 +60,12 @@ export default function ParticulierPage() {
           </p>
           <blockquote className="border-t-2 border-marine pt-4">
             <p>“Met vele jaren ervaring durven we wel te zeggen dat meerjaren onderhoud bij ons in goede handen is.”</p>
+            <p className="mt-3">
+              “Wij geloven in deze formule. Niet alleen door de topverven die we gebruiken en het
+              gecertificeerde onderhoudsabonnement, maar ook omdat u kunt kiezen voor een vaste maandelijkse
+              betaling. Daardoor wordt vakwerk weer betaalbaar en is kwalitatief schilderwerk voor elke
+              woningbezitter bereikbaar.”
+            </p>
             <footer className="mt-2 text-loodgrijs">Walter Amerongen</footer>
           </blockquote>
         </section>
@@ -73,7 +80,15 @@ export default function ParticulierPage() {
             .
           </p>
         </section>
+        <Further
+          links={[
+            { href: "/winterschilder", label: "Winterschilder" },
+            { href: "/onderhoudsplan", label: "GlansGarant en het meerjarenplan" },
+            { href: "/projecten", label: "Buitenschilderwerk in beeld" },
+          ]}
+        />
       </div>
+      <SlotBand title="Een opknap- of bijwerkbeurt" />
     </>
   );
 }

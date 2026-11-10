@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 import PlanList from "@/components/PlanList";
 import PhotoFrame from "@/components/PhotoFrame";
+import { Further, SlotBand } from "@/components/PlanBits";
 import { photos } from "@/content";
 
 export const metadata: Metadata = {
@@ -43,8 +44,21 @@ export default function GevelreinigingPage() {
           <h2 className="plan-rule pt-6 text-2xl">Gevelreiniging voor</h2>
           <PlanList items={voor} />
         </div>
-        <PhotoFrame photo={photos.gevel} sizes="320px" />
+        <div className="space-y-4">
+          <PhotoFrame photo={photos.gevel} sizes="320px" />
+          <PhotoFrame photo={photos.villa} sizes="320px" />
+        </div>
       </div>
+      <div className="mx-auto max-w-6xl px-5 pb-4">
+        <Further
+          links={[
+            { href: "/stucwerk", label: "Stucen van een buitenmuur" },
+            { href: "/schilderwerk", label: "Buitenschilderwerk" },
+            { href: "/projecten", label: "Projecten" },
+          ]}
+        />
+      </div>
+      <SlotBand title="Vraag naar de mogelijkheden en de kosten" />
     </>
   );
 }

@@ -142,6 +142,60 @@ export const content = {
     },
   ],
 
+  clientGroups: [
+    {
+      title: "Vastgoed, VvE en corporaties",
+      names: [
+        "Prowonen",
+        "Rebo Vastgoed management",
+        "Rebo VVE management",
+        "Van Rooijen VVE management",
+        "Waarborg Vastgoed",
+      ],
+    },
+    {
+      title: "Zorg en welzijn",
+      names: ["Riwis zorg en welzijn", "Zorggroep Apeldoorn", "Tactus Verslavingszorg", "Zozijn Zorg"],
+    },
+    {
+      title: "Onderwijs en bibliotheek",
+      names: [
+        "Graafschap College",
+        "Berkelstreek opleidingen",
+        "MaxX onderwijs",
+        "OLCT Opleiding & Training Borne",
+        "Bibliotheek oost-Achterhoek",
+      ],
+    },
+    {
+      title: "Bouw",
+      names: ["Carmiggelt bouwbedrijf", "Kreunen Bouw", "van Wijnen Bouw", "Beltman bouwbedrijf"],
+    },
+    {
+      title: "Overheid",
+      names: ["Gemeente Berkelland", "Brandweer Deventer"],
+    },
+    {
+      title: "Overige opdrachtgevers",
+      names: [
+        "Mooiland Vitalis",
+        "PHB Deventer",
+        "Trajectum",
+        "Aldi Groenlo",
+        "Rentray",
+        "Sportaccommodatie ‘t Timpke",
+        "Careaz",
+        "Pactum Lochem",
+        "Legamaster Lochem",
+        "Skylance International Borne",
+        "Apollo Vredestein",
+        "Bronckhorst Hi-tech",
+        "Van de Kolk wonen en slapen",
+        "Nawi Borculo",
+      ],
+    },
+  ],
+
   clients: [
     "Prowonen",
     "Mooiland Vitalis",

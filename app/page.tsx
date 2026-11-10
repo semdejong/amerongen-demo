@@ -3,6 +3,7 @@ import Image from "next/image";
 import { content, photos } from "@/content";
 import Jaarschijf from "@/components/Jaarschijf";
 import PhotoFrame from "@/components/PhotoFrame";
+import { CycleSheet } from "@/components/PlanBits";
 import { BelButton, MailLink, OfferteButton, PhoneLink } from "@/components/Actions";
 
 const diensten = [
@@ -45,7 +46,7 @@ const diensten = [
 
 const strip = [
   photos.korenmolen,
-  photos.herenhuis,
+  photos.schilderDeur,
   photos.luiken,
   photos.dakkapel,
   photos.bedrijfsgebouw,
@@ -78,6 +79,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section data-section="gevelband" className="bg-white pb-10">
+        <div className="mx-auto max-w-6xl px-5">
+          <PhotoFrame photo={photos.herenhuis} sizes="(max-width: 1152px) 100vw, 1152px" />
+        </div>
+      </section>
+
       <section data-section="jaarschijf" className="border-y border-haarlijn bg-planpapier">
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
           <h2 className="plan-rule max-w-3xl text-3xl md:text-4xl">De jaarschijf van een meerjarenplan</h2>
@@ -97,6 +104,9 @@ export default function Home() {
           <p className="mt-3 font-mono text-[12px] text-loodgrijs">
             Rood: in de verf of herschilderbeurt. Marine: controle, inspectie of bijwerken.
           </p>
+          <div className="mt-8 bg-white">
+            <CycleSheet />
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/onderhoudsplan" className="btn btn-marine">
               Onderhoudsplan
@@ -117,6 +127,11 @@ export default function Home() {
               woningbouwverenigingen. Wij stellen een meerjarenplan op en voeren mutatiewerk,
               glasschadeherstel, brand- en waterschadeherstel, calamiteitenonderhoud en service-onderhoud uit.
             </p>
+            <ul className="mt-4 space-y-1 text-sm text-white/85">
+              {content.zakelijkTaken.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <p className="mt-4" id="prowonen-home">
               Woningcorporatie Prowonen, die woningen verhuurt in de Achterhoek, heeft eind november de
               intentieverklaring getekend met drie onderhoudsbedrijven. Het schilderwerk van het vastgoed
@@ -140,9 +155,14 @@ export default function Home() {
               Renovatie en totaalonderhoud van woningen, bijgebouwen en garages. Schilderwerk binnen en
               buiten, houtrotrenovatie, stucwerk, glaszetten, gevelreiniging en de winterschilder.
             </p>
+            <ul className="mt-4 space-y-1 text-sm text-loodgrijs">
+              <li>Schilderwerk binnen en buiten, ook de winterschilder</li>
+              <li>Houtrotrenovatie, stucwerk, glaszetten en gevelreiniging</li>
+              <li>GlansGarant in Borculo, Lochem, Ruurlo en Vorden</li>
+            </ul>
             <p className="mt-4 text-loodgrijs">
-              In Borculo, Lochem, Ruurlo en Vorden werken wij als exclusief partner van GlansGarant
-              Berkelland-Lochem B.V. aan meerjarenonderhoud tegen een vast bedrag per maand.
+              In die plaatsen werken wij als exclusief partner van GlansGarant Berkelland-Lochem B.V. aan
+              meerjarenonderhoud tegen een vast bedrag per maand.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/particulier" className="btn btn-marine">

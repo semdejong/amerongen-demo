@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 import PlanList from "@/components/PlanList";
 import PhotoFrame from "@/components/PhotoFrame";
+import { Further, SlotBand } from "@/components/PlanBits";
 import { content, photos } from "@/content";
 
 export const metadata: Metadata = {
@@ -46,8 +47,22 @@ export default function SchilderwerkPage() {
           <h2 className="plan-rule pt-6 text-2xl">Schilderwerk voor</h2>
           <PlanList items={voor} />
         </div>
-        <PhotoFrame photo={photos.kozijnDetail} sizes="280px" />
+        <div className="space-y-4">
+          <PhotoFrame photo={photos.kozijnDetail} sizes="280px" />
+          <PhotoFrame photo={photos.schilderKozijn} sizes="280px" />
+        </div>
       </div>
+      <div className="mx-auto max-w-6xl px-5 pb-4">
+        <Further
+          links={[
+            { href: "/winterschilder", label: "De winterschilder" },
+            { href: "/houtrot", label: "Houtrotrenovatie" },
+            { href: "/stucwerk", label: "Stucwerk" },
+            { href: "/onderhoudsplan", label: "Meerjarenplan" },
+          ]}
+        />
+      </div>
+      <SlotBand />
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageIntro from "@/components/PageIntro";
 import PhotoFrame from "@/components/PhotoFrame";
+import { Further, SlotBand } from "@/components/PlanBits";
 import { content, photos } from "@/content";
 
 export const metadata: Metadata = {
@@ -66,8 +67,17 @@ export default function OverOnsPage() {
             gevestigd aan {content.contact.street}, {content.contact.postalCode} {content.contact.city}. KvK{" "}
             {content.contact.kvk}.
           </p>
+          <Further
+            links={[
+              { href: "/referenties", label: "Opdrachtgevers" },
+              { href: "/zakelijk", label: "Prowonen en Resultaatgericht Samenwerken" },
+              { href: "/onderhoudsplan", label: "OnderhoudNL en GlansGarant" },
+              { href: "/contact", label: "Contact en route" },
+            ]}
+          />
         </div>
       </div>
+      <SlotBand />
     </>
   );
 }

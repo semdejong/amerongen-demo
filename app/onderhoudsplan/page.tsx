@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 import PlanList from "@/components/PlanList";
+import { CycleSheet, Further, SlotBand } from "@/components/PlanBits";
 import Jaarschijf from "@/components/Jaarschijf";
 import { content } from "@/content";
 import Link from "next/link";
@@ -38,6 +39,9 @@ export default function OnderhoudsplanPage() {
           <p className="mt-3 font-mono text-[12px] text-loodgrijs">
             Jaar 1 in de verf. Elk jaar controle en onderhoud. Na vijf of zes jaar een complete herschilderbeurt.
           </p>
+          <div className="mt-6">
+            <CycleSheet />
+          </div>
         </div>
 
         <section data-section="mjop" className="space-y-4">
@@ -119,7 +123,15 @@ export default function OnderhoudsplanPage() {
             .
           </p>
         </section>
+        <Further
+          links={[
+            { href: "/zakelijk", label: "Vastgoed en corporaties" },
+            { href: "/particulier", label: "Particulieren en GlansGarant" },
+            { href: "/houtrot", label: "Waarom inspectie houtrot voorkomt" },
+          ]}
+        />
       </div>
+      <SlotBand title="Een plan voor de komende jaren" />
     </>
   );
 }

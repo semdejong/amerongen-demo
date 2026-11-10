@@ -4,6 +4,7 @@ import PageIntro from "@/components/PageIntro";
 import PlanList from "@/components/PlanList";
 import Jaarschijf from "@/components/Jaarschijf";
 import PhotoFrame from "@/components/PhotoFrame";
+import { Further, SlotBand } from "@/components/PlanBits";
 import { content, photos } from "@/content";
 
 export const metadata: Metadata = {
@@ -90,7 +91,16 @@ export default function ZakelijkPage() {
         </section>
 
         <PhotoFrame photo={photos.villa} sizes="(max-width: 768px) 100vw, 960px" />
+        <Further
+          links={[
+            { href: "/onderhoudsplan", label: "Meerjaren onderhoudsplan" },
+            { href: "/referenties", label: "Opdrachtgevers" },
+            { href: "/glaszetten", label: "Glasschadeherstel" },
+            { href: "/projecten", label: "Projecten" },
+          ]}
+        />
       </div>
+      <SlotBand title="Een meerjarenplan bespreken" />
     </>
   );
 }
