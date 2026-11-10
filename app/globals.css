@@ -154,6 +154,7 @@ h4 {
 }
 
 dialog.lightbox {
+  z-index: 80;
   width: min(960px, calc(100vw - 1.5rem));
   max-height: calc(100vh - 1.5rem);
   margin: auto;
@@ -166,6 +167,12 @@ dialog.lightbox {
 
 dialog.lightbox::backdrop {
   background: rgba(9, 35, 86, 0.78);
+}
+
+/* The sticky header (z-40) paints over the dialog backdrop. Drop it while the modal is open. */
+body:has(dialog.lightbox[open]) [data-section="header"],
+body:has(dialog.lightbox[open]) [data-section="mobiele-balk"] {
+  z-index: 0;
 }
 
 [id] {

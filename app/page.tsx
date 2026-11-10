@@ -59,18 +59,18 @@ export default function Home() {
   return (
     <>
       <section data-section="hero" className="bg-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-10 md:grid-cols-2 md:py-14">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-8 pt-5 md:grid-cols-2 md:py-14">
           <div>
             <p className="text-base text-loodgrijs">{content.company.tagline}</p>
-            <h1 className="mt-3 text-4xl text-marine md:text-5xl">
+            <h1 className="mt-2 text-4xl text-marine md:mt-3 md:text-5xl">
               Planmatig onderhoud van vastgoed — en van uw woning — vanuit Borculo.
             </h1>
-            <p className="mt-5 text-loodgrijs">
+            <p className="mt-3 text-loodgrijs md:mt-5">
               Als middelgroot, full-service schildersbedrijf zijn wij gespecialiseerd in renovatie en
               totaalonderhoud van vastgoed. Voor particulieren, vastgoedbeheerders, zorginstellingen,
               woningbouwverenigingen en overheidsgebouwen.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3 md:mt-6">
               <BelButton />
               <OfferteButton tone="marine" label="Vrijblijvende offerte" />
             </div>
