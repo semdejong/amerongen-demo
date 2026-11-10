@@ -1,14 +1,39 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Red_Hat_Display, Red_Hat_Mono, Red_Hat_Text } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import MobileBar from "@/components/MobileBar";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const display = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const text = Red_Hat_Text({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-text",
+  display: "swap",
+});
+
+const mono = Red_Hat_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
+  title: {
+    default: content.seo.title,
+    template: `%s · ${content.company.name}`,
+  },
   description: content.seo.description,
   robots: {
     index: false,
@@ -16,7 +41,7 @@ export const metadata: Metadata = {
     nocache: true,
     googleBot: { index: false, follow: false, noimageindex: true },
   },
-  icons: content.company.logo ? { icon: content.company.logo } : undefined,
+  icons: { icon: content.company.logo },
 };
 
 export const viewport: Viewport = { themeColor: content.colors.primary };
@@ -37,12 +62,24 @@ const themeVars = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html
+      lang={content.seo.lang}
+      style={themeVars}
+      className={`${display.variable} ${text.variable} ${mono.variable} h-full scroll-smooth antialiased`}
+    >
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
       </head>
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body className="flex min-h-full flex-col pb-16 md:pb-0">
+        <a href="#inhoud" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-3 focus:py-2">
+          Naar de inhoud
+        </a>
+        <SiteHeader />
+        <main id="inhoud" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+        <MobileBar />
         <SleadsBadge />
       </body>
     </html>
